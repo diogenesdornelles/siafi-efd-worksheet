@@ -127,7 +127,7 @@ export default function Tables() {
                       className="text-gray-600 cursor-pointer scale-75"
                       onClick={() => handleClick(index + 1)}
                     >
-                      <div className='flex gap-2'>
+                      <div className='flex gap-2 items-center'>
                         <ArrowDown />
                         <p>{siafi.documents.length} doc(s)</p>
                       </div>
