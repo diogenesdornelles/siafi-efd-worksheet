@@ -5,6 +5,11 @@ import { Table } from 'flowbite-react';
 import formatBrlCurrency from '../../utils/formatBrlCurrency';
 import { nanoid } from 'nanoid';
 
+
+/**
+ * Renders a component in the shape os an Arrow.
+ * @returns {JSX.Element}
+ */
 function ArrowDown() {
   return (
     <svg
@@ -43,6 +48,15 @@ export default function Tables() {
       differentValues,
     },
   } = appContext;
+
+  /**
+   * A state variable that store lines by collector siafi that are visibles.
+   * @type {Array<number>}
+   */
+  /**
+   * Event handler function for handling the click event.
+   * @param {number} line - The line number on table.
+   */
 
   const [showDocuments, setShowDocuments] = useState([]);
 
@@ -98,7 +112,7 @@ export default function Tables() {
           <Table.Body className="divide-y">
             {siafiValuesByCollectors?.map((siafi, index) => (
               <React.Fragment key={nanoid(7)}>
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800 hover:bg-blue-50">
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     {index + 1}
                   </Table.Cell>
@@ -143,7 +157,7 @@ export default function Tables() {
                   siafi.documents.map((document) => (
                     <React.Fragment key={nanoid(6)}>
                       <Table.Row
-                        className=" dark:border-gray-700 dark:bg-gray-800 transition-all"
+                        className=" dark:border-gray-700 dark:bg-gray-800"
                         style={{ backgroundColor: '#BFBE9C' }}
                       >
                         <Table.Cell className="whitespace-nowrap  text-gray-200 dark:text-white">
@@ -182,7 +196,7 @@ export default function Tables() {
             {efdValuesAndCnpjs?.map((efd, index) => (
               <Table.Row
                 key={nanoid(7)}
-                className="bg-white dark:border-gray-700 dark:bg-gray-800"
+                className="bg-white dark:border-gray-700 dark:bg-gray-800 hover:bg-blue-50"
               >
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                   {index + 1}

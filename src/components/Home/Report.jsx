@@ -19,7 +19,7 @@ function Report() {
       efdTotalValue,
       totalValueDifference,
       cnpjErrors,
-      siafiValuesAndCollectors,
+      siafiValuesByCollectors,
       efdValuesAndCnpjs,
     },
   } = appContext;
@@ -63,7 +63,7 @@ function Report() {
                 key={nanoid(7)}
               >
                 CNPJ n. {error.cnpj}, no valor de{' '}
-                {formatBrlCurrency(siafiValuesAndCollectors[error.index].value)}
+                {formatBrlCurrency(siafiValuesByCollectors[error.index].value)}
                 {'. '}Ver abaixo linha n. {error.index}
               </p>
             ),
