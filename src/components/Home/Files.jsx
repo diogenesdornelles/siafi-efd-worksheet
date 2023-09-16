@@ -20,10 +20,8 @@ function Files() {
     appState: { siafiFile, efdFile },
   } = appContext;
   return (
-    <div className="flex flex-col p-4 gap-2 border-t-2 border-b-2 border-gray-800">
-      <h6 className="text-lg font-bold dark:text-white">
-        Arquivos selecionados:
-      </h6>
+    <div className="flex flex-col gap-2 p-4 border-gray-800 bg-blue-100 hover:bg-blue-200 transition-all">
+      <h2 className="text-4xl font-bold mt-6 p-4">Arquivos selecionados:</h2>
       <p>{siafiFile}</p>
       <p>{efdFile}</p>
     </div>

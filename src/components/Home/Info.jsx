@@ -36,9 +36,9 @@ function Info() {
     setShow((s) => !s);
   };
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-blue-100 hover:bg-blue-200 transition-all p-4">
       <div className="md:p-4">
-        <h2 className="mb-6 text-base font-semibold text-gray-900 dark:text-white">
+        <h2 className="text-4xl font-bold mt-6 mb-5">
           Requisitos para análise das planilhas:
         </h2>
         <ul className="space-y-1 text-gray-600 list-disc list-inside dark:text-gray-400">

@@ -163,24 +163,30 @@ function Home() {
     }
   };
   return (
-    <>
+    <main id="home-page">
       <Nav />
-      <div className="w-11/12 md:w-7/12 flex flex-col m-auto p-2 md:p-8 border-2 border-gray-600 mb-28 mt-8 shadow-lg gap-8">
+      <div className="w-11/12 md:w-7/12 flex flex-col m-auto p-2 md:p-8 rounded-md border-gray-600 mb-28 mt-8 shadow-md bg-white hover:shadow-xl gap-8 transition-all">
         <Info />
-        <div className="flex flex-col md:flex-row gap-6 justify-center border-t-2 pt-8 border-gray-800">
-          {worksheets.map((dropzone) => (
-            <MyDropzone key={dropzone.name} worksheets={dropzone} />
-          ))}
-        </div>
+        <section className="bg-green-100 hover:bg-green-200 transition-all p-4">
+          <h2 className="text-4xl font-bold mt-6 p-4">Área de seleção:</h2>
+          <div className="flex flex-col md:flex-row gap-6 justify-center pt-8 border-gray-800">
+            {worksheets.map((dropzone) => (
+              <MyDropzone key={dropzone.name} worksheets={dropzone} />
+            ))}
+          </div>
+        </section>
         <Files />
-        <ButtonCheck handleClick={handleClick} />
-        <DifferencesTableValues />
-        <ButtonClear />
+        <section className="flex flex-col gap-6 bg-orange-100 hover:bg-orange-200 transition-all p-4">
+          <h2 className="text-4xl font-bold mt-6 p-4">Verificar:</h2>
+          <ButtonCheck handleClick={handleClick} />
+          <DifferencesTableValues />
+          <ButtonClear />
+        </section>
         <Report />
         <Tables />
       </div>
       <TheFooter />
-    </>
+    </main>
   );
 }
 
