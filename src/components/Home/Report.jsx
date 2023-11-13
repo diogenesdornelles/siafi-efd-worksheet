@@ -93,8 +93,8 @@ function Report() {
           )}
         </div>
       </div>
-      <div className='w-4/12 flex md:flex-col justify-center p-6 bg-white mt-7 rounded-lg gap-6 m-auto'>
-        {siafiTotal && efdTotal ? (<Charts />) : null}
+      <div className="w-4/12 flex md:flex-col justify-center p-6 bg-white mt-7 rounded-lg gap-6 m-auto">
+        {siafiTotal && efdTotal ? <Charts /> : null}
       </div>
     </section>
   );
