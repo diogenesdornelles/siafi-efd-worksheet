@@ -165,7 +165,7 @@ function Home() {
   return (
     <main id="home-page">
       <Nav />
-      <div className="w-11/12 md:w-7/12 flex flex-col m-auto p-2 md:p-8 rounded-md border-gray-600 mb-28 mt-8 shadow-md bg-white hover:shadow-xl gap-8 transition-all">
+      <div className="w-11/12 md:w-10/12 flex flex-col m-auto p-2 md:p-8 rounded-md border-gray-600 mb-28 mt-8 shadow-md bg-white hover:shadow-xl gap-8 transition-all">
         <Info />
         <section className="bg-green-100 hover:bg-green-200 transition-all p-4">
           <h2 className="text-4xl font-bold mt-6 p-4">Área de seleção:</h2>
