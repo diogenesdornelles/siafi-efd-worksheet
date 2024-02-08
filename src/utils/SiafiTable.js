@@ -5,6 +5,7 @@ import extractNumberFromString from './extractNumberFromString';
 import extractFirstFloatNumberFromString from './extractFirstFloatNumberFromString';
 import sortDocuments from './sortDocuments';
 import getPartialSum from './getPartialSum';
+import sanitizeColumns from './sanitizeColumns';
 
 /**
  * Class Represents a SiafiTable entity.
@@ -27,6 +28,7 @@ export default class SiafiTable {
      * @type {Array<Object>}
      */
     this.rows = getTableFromExcel(binaryStr);
+    this.rows = sanitizeColumns(this.rows)
 
     /**
      * Flag indicating if the table is valid.
@@ -87,21 +89,20 @@ export default class SiafiTable {
       let value = 0;
       let documents = [];
       this.rows.forEach((row) => {
-        let parsedValue;
-        if (Number(collector) === Number(row.recolhedor)) {
+        if (collector === Number(extractNumberFromString(row.recolhedor))) {
           if (typeof row.valor === 'string') {
-            parsedValue = extractFirstFloatNumberFromString(row.valor);
-            value += parsedValue;
+            value += extractFirstFloatNumberFromString(row.valor);
           } else {
-            parsedValue = parseFloat(row.valor);
-            value += parsedValue;
+            console.log(row)
+            value += parseFloat(row.valor);
           }
           documents.push({
             document: row.documento,
-            value: parsedValue,
+            value,
           });
         }
       });
+      console.log(value)
       documents = sortDocuments(documents);
       documents = getPartialSum(documents);
       value = roundToNearestTwoDecimals(value);

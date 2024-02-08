@@ -105,8 +105,6 @@ export function Charts() {
     });
   });
 
-  console.log(siafiDataset);
-
   const dataScatter = {
     datasets: [
       {

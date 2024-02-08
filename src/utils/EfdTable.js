@@ -2,7 +2,8 @@ import validateColumns from './validateColumns';
 import getTableFromExcel from './getTableFromExcel';
 import roundToNearestTwoDecimals from './roundToNearestTwoDecimals';
 import extractNumberFromString from './extractNumberFromString';
-import extractFirstFloatNumberFromString from './extractFirstFloatNumberFromString';
+import extractFirstFloatNumberFromString from './extractFirstFloatNumberFromString'
+import sanitizeColumns from './sanitizeColumns';
 
 /**
  * Class Represents an EfdTable entity.
@@ -25,6 +26,7 @@ export default class EfdTable {
      * @type {Array<Object>}
      */
     this.rows = getTableFromExcel(binaryStr);
+    this.rows = sanitizeColumns(this.rows)
 
     /**
      * Flag indicating if the table is valid.
@@ -84,7 +86,7 @@ export default class EfdTable {
     this.cnpjs.forEach((cnpj) => {
       let value = 0;
       this.rows.forEach((row) => {
-        if (Number(cnpj) === Number(row.cnpj)) {
+        if (Number(cnpj) === Number(extractNumberFromString(row.cnpj))) {
           if (typeof row.valor === 'string') {
             value += extractFirstFloatNumberFromString(row.valor);
           } else {

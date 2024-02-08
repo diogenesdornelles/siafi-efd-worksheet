@@ -14,6 +14,7 @@ export default function extractNumberFromString(str) {
    * Matches found in the string using the regular expression.
    * @type {string[]}
    */
+  if (typeof str !== 'string') return str
   const matches = str.match(regex);
 
   /**

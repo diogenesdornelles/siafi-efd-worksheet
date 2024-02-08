@@ -8,6 +8,7 @@ export default function extractFirstFloatNumberFromString(str) {
    * Replace commas with dots to handle decimal separators.
    * @type {string}
    */
+  if (typeof str !== 'string') return str
   str = str.replace(',', '.');
 
   /**
