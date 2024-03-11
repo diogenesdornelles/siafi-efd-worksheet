@@ -28,7 +28,7 @@ export default class SiafiTable {
      * @type {Array<Object>}
      */
     this.rows = getTableFromExcel(binaryStr);
-    this.rows = sanitizeColumns(this.rows)
+    this.rows = sanitizeColumns(this.rows);
 
     /**
      * Flag indicating if the table is valid.
@@ -93,7 +93,6 @@ export default class SiafiTable {
           if (typeof row.valor === 'string') {
             value += extractFirstFloatNumberFromString(row.valor);
           } else {
-            console.log(row)
             value += parseFloat(row.valor);
           }
           documents.push({
@@ -102,7 +101,6 @@ export default class SiafiTable {
           });
         }
       });
-      console.log(value)
       documents = sortDocuments(documents);
       documents = getPartialSum(documents);
       value = roundToNearestTwoDecimals(value);

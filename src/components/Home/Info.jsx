@@ -9,6 +9,7 @@ import imag2 from '../../assets/images/Home/siafi-example.png';
  */
 
 const infos = [
+  'Nominar as planilhas como EFD.xlsx e SIAFI.xlsx;',
   'Planilha SIAFI contendo três colunas, com cabeçalhos incluindo recolhedor, documento e valor;',
   'Planilha EFD-REINF contendo três colunas, com cabeçalhos incluindo cnpj, cno e valor;',
   'Cabeçalhos com letras em minúsculo e sem deixar espaços em branco;',
