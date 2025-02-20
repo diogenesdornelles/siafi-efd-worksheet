@@ -1,20 +1,14 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc'
-import eslint from 'vite-plugin-eslint';
+import react from '@vitejs/plugin-react-swc';
+import eslintPlugin from "@nabla/vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), eslint()],
+  plugins: [react(), eslintPlugin()],
   root: 'src',
   build: {
     outDir: '../dist',
     sourcemap: true,
   },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: ['../.test/setup.js'],
-    include: ['**/(*.)?{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    exclude: ['node_modules', 'dist', '.idea', '.git', '.cache'],
   },
-});
+);
