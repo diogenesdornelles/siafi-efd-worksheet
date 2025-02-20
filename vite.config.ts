@@ -5,10 +5,9 @@ import eslintPlugin from "@nabla/vite-plugin-eslint";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), eslintPlugin()],
-  root: 'src',
+  // Removendo o root: 'src', assume-se que o index.html está na raiz
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
     sourcemap: true,
   },
-  },
-);
+});
